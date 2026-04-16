@@ -967,6 +967,8 @@ void dvclos_(int4 *ich)
 	XFreeCursor(display,curs);
 	XDestroyWindow(display,window);
 	XCloseDisplay(display);
+        if(cpixel){ free(cpixel); cpixel=NULL; }
+        if(idpix){ free(idpix); idpix=NULL; }
 	*ich = 1;
 }
 
